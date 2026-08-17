@@ -69,7 +69,7 @@ export default function ContractModal({
                 CLÁUSULA PRIMEIRA – DO OBJETO
               </h4>
               <p>
-                <strong>1.1.</strong> O presente contrato tem por objeto a licença de uso do software plataforma <strong>"PetNexus"</strong> (sistema White Label de gestão para pet shops, banho & tosa e clínicas veterinárias) na modalidade SaaS (Software as a Service), conforme o plano escolhido no momento da contratação.
+                <strong>1.1.</strong> O presente contrato tem por objeto a licença de uso do software plataforma <strong>&quot;PetNexus&quot;</strong> (sistema White Label de gestão para pet shops, banho & tosa e clínicas veterinárias) na modalidade SaaS (Software as a Service), conforme o plano escolhido no momento da contratação.
               </p>
               <p className="mt-2">
                 <strong>1.2.</strong> Estão inclusos na primeira versão (Setup inicial): a personalização básica da identidade visual com base nas diretrizes fornecidas pelo CONTRATANTE e a configuração inicial para o fluxo de trabalho da sua unidade.
@@ -117,7 +117,7 @@ export default function ContractModal({
                 CLÁUSULA QUINTA – DO ACEITE ELETRÔNICO
               </h4>
               <p>
-                <strong>5.1.</strong> Ao marcar a caixa "Li e concordo com os Termos de Serviço e Contrato de Licença" e finalizar o pagamento no site da CONTRATADA, o CONTRATANTE declara ter lido, compreendido e aceito integralmente todas as cláusulas aqui descritas, tendo este registro eletrônico (data, hora, IP e identificador da transação) <strong>validade jurídica plena</strong> nos termos da Medida Provisória nº 2.200-2/2001 e do Código Civil Brasileiro.
+                <strong>5.1.</strong> Ao marcar a caixa &quot;Li e concordo com os Termos de Serviço e Contrato de Licença&quot; e finalizar o pagamento no site da CONTRATADA, o CONTRATANTE declara ter lido, compreendido e aceito integralmente todas as cláusulas aqui descritas, tendo este registro eletrônico (data, hora, IP e identificador da transação) <strong>validade jurídica plena</strong> nos termos da Medida Provisória nº 2.200-2/2001 e do Código Civil Brasileiro.
               </p>
             </div>
           </div>

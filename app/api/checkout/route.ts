@@ -117,10 +117,11 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ url: session.url });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Erro ao criar sessão Stripe Checkout:", error);
+    const errorMessage = error instanceof Error ? error.message : "Erro interno ao processar pagamento.";
     return NextResponse.json(
-      { error: error?.message || "Erro interno ao processar pagamento." },
+      { error: errorMessage },
       { status: 500 }
     );
   }

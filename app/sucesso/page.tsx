@@ -311,7 +311,7 @@ export default function SucessoPage({
         </div>
 
         <div className="space-y-4 text-xs">
-          <p><strong>CLÁUSULA PRIMEIRA – DO OBJETO:</strong> 1.1. O presente contrato tem por objeto a licença de uso do software plataforma "PetNexus" na modalidade SaaS, conforme o plano escolhido no momento da contratação. 1.2. Estão inclusos na primeira versão (Setup inicial): a personalização básica da identidade visual com base nas diretrizes fornecidas pelo CONTRATANTE e a configuração inicial para o fluxo de trabalho da sua unidade.</p>
+          <p><strong>CLÁUSULA PRIMEIRA – DO OBJETO:</strong> 1.1. O presente contrato tem por objeto a licença de uso do software plataforma &quot;PetNexus&quot; na modalidade SaaS, conforme o plano escolhido no momento da contratação. 1.2. Estão inclusos na primeira versão (Setup inicial): a personalização básica da identidade visual com base nas diretrizes fornecidas pelo CONTRATANTE e a configuração inicial para o fluxo de trabalho da sua unidade.</p>
 
           <p><strong>CLÁUSULA SEGUNDA – DO PAGAMENTO E VIGÊNCIA:</strong> 2.1. O CONTRATANTE pagará à CONTRATADA o valor referente ao plano e taxa de setup escolhidos no site. 2.2. O desenvolvimento e a liberação do acesso/personalização da primeira versão terão início imediatamente após a confirmação do pagamento pela instituição financeira.</p>
 

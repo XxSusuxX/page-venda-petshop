@@ -142,7 +142,7 @@ export default function CheckoutModal({
           setError(data?.error || "Erro ao iniciar o pagamento. Tente novamente.");
         }
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Erro no checkout:", err);
       setError("Erro de conexão. Redirecionando para suporte no WhatsApp...");
       setTimeout(() => {
