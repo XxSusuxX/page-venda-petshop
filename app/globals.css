@@ -25,6 +25,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Disable smooth scroll on touch devices to prevent iOS Safari scroll thrashing */
+@media (hover: none) and (pointer: coarse) {
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ─────────────────────────────────────────
    Eradicate text caret / editing cursor artifacts
    ───────────────────────────────────────── */
@@ -78,7 +85,6 @@ body {
   transition:
     opacity 0.65s var(--ease-out),
     transform 0.65s var(--ease-out);
-  will-change: opacity, transform;
 }
 
 .reveal-on-scroll.is-visible {

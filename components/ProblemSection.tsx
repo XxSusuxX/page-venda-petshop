@@ -29,7 +29,7 @@ export default function ProblemSection() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/[0.03] blur-[150px] rounded-full -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/[0.03] blur-[60px] md:blur-[150px] rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10">
         {/* Section header */}

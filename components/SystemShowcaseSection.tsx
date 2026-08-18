@@ -198,8 +198,8 @@ export default function SystemShowcaseSection() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden select-none">
       {/* Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-primary/[0.03] blur-[200px] rounded-full -z-10 pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/[0.02] blur-[150px] rounded-full -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-primary/[0.03] blur-[80px] md:blur-[200px] rounded-full -z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/[0.02] blur-[60px] md:blur-[150px] rounded-full -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10">
         {/* Section header */}
@@ -265,7 +265,7 @@ export default function SystemShowcaseSection() {
           >
             {/* Glow */}
             <div
-              className="absolute -inset-8 blur-[80px] rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-700 -z-10 pointer-events-none"
+              className="absolute -inset-8 blur-[40px] md:blur-[80px] rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-700 -z-10 pointer-events-none"
               style={{ background: `radial-gradient(ellipse, ${active.accentFrom} 0%, ${active.accentTo} 100%)` }}
             />
 

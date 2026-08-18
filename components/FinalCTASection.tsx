@@ -8,9 +8,9 @@ export default function FinalCTASection() {
       <div className="max-w-5xl mx-auto px-5 md:px-10">
         <div className="relative bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 rounded-[2rem] md:rounded-[2.5rem] p-8 sm:p-12 md:p-20 text-center overflow-hidden">
           {/* Background glow effects */}
-          <div className="absolute -top-32 -right-32 w-80 h-80 bg-primary/20 blur-[120px] rounded-full" />
-          <div className="absolute -bottom-32 -left-32 w-60 h-60 bg-primary/15 blur-[100px] rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.05] blur-[200px] rounded-full" />
+          <div className="absolute -top-32 -right-32 w-80 h-80 bg-primary/20 blur-[50px] md:blur-[120px] rounded-full" />
+          <div className="absolute -bottom-32 -left-32 w-60 h-60 bg-primary/15 blur-[40px] md:blur-[100px] rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.05] blur-[80px] md:blur-[200px] rounded-full" />
 
           {/* Urgency badge */}
           <div className="relative z-10 inline-flex items-center gap-2 bg-primary/15 border border-primary/25 text-primary px-5 py-2 rounded-full text-xs font-bold mb-8 animate-pulse-subtle">

@@ -25,8 +25,8 @@ export default function SolutionSection() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/[0.04] blur-[150px] rounded-full -z-10" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/[0.03] blur-[120px] rounded-full -z-10" />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/[0.04] blur-[60px] md:blur-[150px] rounded-full -z-10" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/[0.03] blur-[50px] md:blur-[120px] rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10">
         {/* Section header */}
@@ -47,7 +47,7 @@ export default function SolutionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Visual — Solution Mockup */}
           <div className="reveal-from-left relative group order-2 lg:order-1">
-            <div className="absolute -inset-6 bg-primary/[0.08] blur-[60px] rounded-full opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
+            <div className="absolute -inset-6 bg-primary/[0.08] blur-[30px] md:blur-[60px] rounded-full opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
             <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-primary/15 shadow-2xl shadow-black/40 mockup-hover">
               <img
                 src="/pet1.png"

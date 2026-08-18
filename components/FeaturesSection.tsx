@@ -28,9 +28,9 @@ export default function FeaturesSection() {
   const [activeTab, setActiveTab] = useState<"admin" | "tutor">("admin");
 
   return (
-    <section id="funcionalidades" className="py-20 md:py-28 bg-surface-container-lowest/50 border-y border-hairline-border/30 relative overflow-hidden" style={{ contain: 'paint' }}>
+    <section id="funcionalidades" className="py-20 md:py-28 bg-surface-container-lowest/50 border-y border-hairline-border/30 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-primary/[0.03] blur-[150px] rounded-full -z-10" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-primary/[0.03] blur-[60px] md:blur-[150px] rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10">
         {/* Section header */}
