@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
   return (
     <section id="como-funciona" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.03] blur-[150px] rounded-full -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.03] blur-[60px] md:blur-[150px] rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10">
         {/* Section header */}

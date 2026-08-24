@@ -74,10 +74,23 @@ export default function CheckoutModal({
     isPhoneValid &&
     acceptedTerms;
 
-  const handleCopyPix = () => {
-    navigator.clipboard.writeText(PIX_CHAVE);
-    setPixCopied(true);
-    setTimeout(() => setPixCopied(false), 2500);
+  const handleCopyPix = async () => {
+    try {
+      await navigator.clipboard.writeText(PIX_CHAVE);
+      setPixCopied(true);
+      setTimeout(() => setPixCopied(false), 2500);
+    } catch {
+      const textArea = document.createElement("textarea");
+      textArea.value = PIX_CHAVE;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      setPixCopied(true);
+      setTimeout(() => setPixCopied(false), 2500);
+    }
   };
 
   const handleFinishPix = () => {

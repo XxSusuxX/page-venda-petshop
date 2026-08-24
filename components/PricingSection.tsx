@@ -106,8 +106,8 @@ export default function PricingSection() {
   return (
     <section id="planos" className="py-20 md:py-28 bg-surface-container-lowest/50 border-y border-hairline-border/30 relative overflow-hidden">
       {/* Background glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/[0.04] blur-[150px] rounded-full -z-10" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/[0.03] blur-[120px] rounded-full -z-10" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/[0.04] blur-[60px] md:blur-[150px] rounded-full -z-10" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/[0.03] blur-[50px] md:blur-[120px] rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10">
 

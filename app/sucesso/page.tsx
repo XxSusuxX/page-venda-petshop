@@ -68,7 +68,7 @@ export default function SucessoPage({
   return (
     <div className="min-h-screen bg-matte-canvas text-on-surface p-4 sm:p-6 md:p-10 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/[0.06] blur-[200px] rounded-full -z-10 print:hidden" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/[0.06] blur-[80px] md:blur-[200px] rounded-full -z-10 print:hidden" />
 
       {/* Main Container */}
       <div className="max-w-3xl mx-auto space-y-8 print:hidden">

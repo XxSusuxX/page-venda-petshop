@@ -6,9 +6,9 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background effects */}
-      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-primary/[0.06] blur-[160px] rounded-full -z-10" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/[0.04] blur-[130px] rounded-full -z-10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-primary/[0.02] blur-[200px] rounded-full -z-10" />
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-primary/[0.06] blur-[60px] md:blur-[160px] rounded-full -z-10" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/[0.04] blur-[50px] md:blur-[130px] rounded-full -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-primary/[0.02] blur-[80px] md:blur-[200px] rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center
         pt-28 pb-16
@@ -105,7 +105,7 @@ export default function HeroSection() {
           className="relative group flex justify-center lg:justify-end animate-fade-in-up"
           style={{ animationDelay: "200ms" }}
         >
-          <div className="absolute -inset-8 bg-primary/10 blur-[90px] rounded-full opacity-40 group-hover:opacity-60 transition-opacity duration-700 -z-10" />
+          <div className="absolute -inset-8 bg-primary/10 blur-[40px] md:blur-[90px] rounded-full opacity-40 group-hover:opacity-60 transition-opacity duration-700 -z-10" />
 
           {/* Main screenshot frame */}
           <div className="relative w-full max-w-[600px]">

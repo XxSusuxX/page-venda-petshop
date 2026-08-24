@@ -43,7 +43,7 @@ export default function FAQSection() {
   return (
     <section id="faq" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-primary/[0.03] blur-[150px] rounded-full -z-10" />
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-primary/[0.03] blur-[60px] md:blur-[150px] rounded-full -z-10" />
 
       <div className="max-w-3xl mx-auto px-5 md:px-10">
         {/* Section header */}
