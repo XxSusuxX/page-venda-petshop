@@ -101,12 +101,7 @@ export default function FeaturesSection() {
             <div className="hidden lg:flex items-center justify-center relative group row-span-3">
               <div className="absolute -inset-4 bg-primary/[0.08] blur-[50px] rounded-full opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
               <div className="relative max-w-[280px] rounded-3xl overflow-hidden border border-primary/15 shadow-2xl shadow-black/40 mockup-hover">
-                <img
-                  src="/pet3.png"
-                  alt="Painel do Tutor PetNexus — status ao vivo e timeline do atendimento"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
+
               </div>
             </div>
 
