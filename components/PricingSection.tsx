@@ -68,9 +68,9 @@ const plans = [
     monthlyPrice: "199,90",
     annualPrice: "159,92",
     annualTotal: "1.919,04",
-    description: "Para quem quer o melhor atendimento.",
+    description: "Para quem quer atendimento VIP e suporte presencial.",
     popular: false,
-    cta: encodeURIComponent("Olá! Tenho interesse no plano Premium com suporte prioritário e tudo liberado no PetNexus. Podem me ajudar?"),
+    cta: encodeURIComponent("Olá! Tenho interesse no plano Premium com implantação presencial na loja, consultoria mensal e suporte VIP do PetNexus. Podem me ajudar?"),
     limits: {
       clientes: "Ilimitado",
       agendamentos: "Ilimitado",
@@ -87,7 +87,29 @@ const plans = [
       { name: "Pacotes de Serviço", included: true },
       { name: "Automações", included: true },
     ],
-    support: "Prioritário (4h)",
+    exclusivePerks: [
+      {
+        icon: "tune",
+        title: "Ajuste de fluxo de trabalho grátis",
+        desc: "Se precisar mudar como o sistema funciona na sua loja, ajustamos sem cobrar nada.",
+      },
+      {
+        icon: "verified",
+        title: "Correção de bugs e imprevistos grátis",
+        desc: "Se surgir qualquer erro no dia a dia, resolvemos sem nenhum custo extra.",
+      },
+      {
+        icon: "storefront",
+        title: "Implantação presencial na região",
+        desc: "Vamos na sua loja (Douradina, Umuarama, Maria Helena e região) instalar e treinar sua equipe.",
+      },
+      {
+        icon: "monitoring",
+        title: "Consultoria mensal de 30 min",
+        desc: "1x por mês analisamos seus números e damos dicas práticas para o seu negócio crescer.",
+      },
+    ],
+    support: "WhatsApp Prioritário (4h)",
     setup: "GRÁTIS",
   },
 ];
@@ -206,6 +228,9 @@ export default function PricingSection() {
                 {plan.popular && (
                   <p className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">TUDO LIBERADO</p>
                 )}
+                {plan.key === "premium" && (
+                  <p className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">👑 ATENDIMENTO VIP & PRESENCIAL</p>
+                )}
                 <p className="text-xs text-on-surface-variant mb-4">{plan.description}</p>
 
                 {/* Price */}
@@ -251,7 +276,7 @@ export default function PricingSection() {
               </div>
 
               {/* Features */}
-              <div className="space-y-3 mb-6 flex-1">
+              <div className="space-y-3 mb-5 flex-1">
                 {plan.features.map((feature, fi) => (
                   <div key={fi} className="flex items-center gap-2.5">
                     {feature.included ? (
@@ -266,6 +291,29 @@ export default function PricingSection() {
                   </div>
                 ))}
               </div>
+
+              {/* Exclusive VIP Perks for Premium */}
+              {plan.exclusivePerks && (
+                <div className="bg-primary/10 border border-primary/25 rounded-xl p-3.5 mb-5 space-y-2.5">
+                  <div className="flex items-center gap-1.5 text-primary font-extrabold text-[11px] uppercase tracking-wider">
+                    <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
+                    Diferenciais Exclusivos VIP:
+                  </div>
+                  <div className="space-y-2">
+                    {plan.exclusivePerks.map((perk, pi) => (
+                      <div key={pi} className="flex items-start gap-2">
+                        <span className="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>
+                          {perk.icon}
+                        </span>
+                        <div>
+                          <p className="text-xs font-bold text-on-surface leading-tight">{perk.title}</p>
+                          <p className="text-[11px] text-on-surface-variant/90 leading-tight mt-0.5">{perk.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Support & Setup */}
               <div className="border-t border-hairline-border/30 pt-4 mb-5 space-y-2">

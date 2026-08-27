@@ -24,8 +24,8 @@ const PLANS_CONFIG: Record<
     annualPriceCents: 143904, // R$ 1.439,04/ano (R$ 119,92/mês com 20% OFF)
   },
   premium: {
-    name: "PetNexus - Plano Premium",
-    description: "Para quem quer o melhor atendimento: Operações ilimitadas, Suporte Prioritário e Implementação Grátis.",
+    name: "PetNexus - Plano Premium (VIP Presencial)",
+    description: "Atendimento VIP: Implantação presencial na região, ajuste de rotina grátis, consultoria mensal e suporte prioritário.",
     monthlyPriceCents: 19990, // R$ 199,90
     annualPriceCents: 191904, // R$ 1.919,04/ano (R$ 159,92/mês com 20% OFF)
   },
