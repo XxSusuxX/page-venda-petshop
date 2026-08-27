@@ -215,7 +215,7 @@ export default function PricingSection() {
             if (isPopular) {
               cardBorderClass = "animated-border-card bg-surface-container-low shadow-2xl shadow-primary/20 md:scale-[1.07] md:z-10";
             } else if (isPremium) {
-              cardBorderClass = "relative bg-gradient-to-b from-amber-500/[0.08] via-surface-container to-surface-container border-2 border-amber-400/60 hover:border-amber-400 shadow-2xl shadow-amber-500/10 hover:shadow-amber-500/20";
+              cardBorderClass = "animated-border-gold bg-surface-container-low bg-gradient-to-b from-amber-500/[0.08] via-surface-container-low to-surface-container-low shadow-2xl shadow-amber-500/15 hover:shadow-amber-500/25";
             }
 
             return (
