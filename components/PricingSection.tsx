@@ -7,14 +7,14 @@ const WHATSAPP_BASE = "https://wa.me/5544998289752?text=";
 
 const plans = [
   {
-    key: "basico",
-    name: "Básico",
+    key: "essencial",
+    name: "Essencial",
     monthlyPrice: "89,90",
     annualPrice: "71,92",
     annualTotal: "863,04",
-    description: "Para quem está começando a organizar o pet shop.",
+    description: "Para começar a organizar.",
     popular: false,
-    cta: encodeURIComponent("Olá! Tenho interesse no plano Básico do PetNexus. Podem me ajudar?"),
+    cta: encodeURIComponent("Olá! Tenho interesse no plano Essencial do PetNexus para começar a organizar meu pet shop. Podem me ajudar?"),
     limits: {
       clientes: "Até 100",
       agendamentos: "Até 150/mês",
@@ -35,14 +35,14 @@ const plans = [
     setup: "A partir de R$ 79,90",
   },
   {
-    key: "profissional",
-    name: "Profissional",
+    key: "completo",
+    name: "Completo",
     monthlyPrice: "149,90",
     annualPrice: "119,92",
     annualTotal: "1.439,04",
-    description: "Para pet shops que querem crescer com eficiência.",
+    description: "Para quem quer crescer sem complicação.",
     popular: true,
-    cta: encodeURIComponent("Olá! Tenho interesse no plano Profissional do PetNexus. Podem me ajudar?"),
+    cta: encodeURIComponent("Olá! Vi que o plano Completo é o mais popular e tem tudo liberado. Quero saber mais!"),
     limits: {
       clientes: "Até 500",
       agendamentos: "Até 500/mês",
@@ -53,11 +53,11 @@ const plans = [
       { name: "Agenda Visual", included: true },
       { name: "Operação Ao Vivo", included: true },
       { name: "PDV & Caixa", included: true },
-      { name: "Módulo Veterinário", included: false },
+      { name: "Módulo Veterinário", included: true },
       { name: "WhatsApp Central", included: true },
       { name: "Financeiro", included: true, note: "Completo" },
       { name: "Pacotes de Serviço", included: true },
-      { name: "Automações", included: false },
+      { name: "Automações", included: true },
     ],
     support: "WhatsApp (24h)",
     setup: "A partir de R$ 79,90",
@@ -65,12 +65,12 @@ const plans = [
   {
     key: "premium",
     name: "Premium",
-    monthlyPrice: "249,90",
-    annualPrice: "199,92",
-    annualTotal: "2.399,04",
-    description: "Para operações completas que exigem o máximo.",
+    monthlyPrice: "199,90",
+    annualPrice: "159,92",
+    annualTotal: "1.919,04",
+    description: "Para quem quer o melhor atendimento.",
     popular: false,
-    cta: encodeURIComponent("Olá! Tenho interesse no plano Premium do PetNexus. Podem me ajudar?"),
+    cta: encodeURIComponent("Olá! Tenho interesse no plano Premium com suporte prioritário e tudo liberado no PetNexus. Podem me ajudar?"),
     limits: {
       clientes: "Ilimitado",
       agendamentos: "Ilimitado",
@@ -88,7 +88,7 @@ const plans = [
       { name: "Automações", included: true },
     ],
     support: "Prioritário (4h)",
-    setup: "A partir de R$ 79,90",
+    setup: "GRÁTIS",
   },
 ];
 
@@ -162,13 +162,34 @@ export default function PricingSection() {
           </div>
         )}
 
+        {/* Recommendation banner "Não sabe qual escolher?" */}
+        <div className="max-w-3xl mx-auto mb-10 bg-primary/10 border border-primary/30 rounded-2xl p-6 text-center reveal-on-scroll">
+          <p className="text-lg font-bold text-on-surface mb-2">
+            🏆 Não sabe qual escolher? O Completo tem TUDO por R$ 149,90
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-on-surface-variant">
+            <span className="flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-primary text-base" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+              Todas as funcionalidades liberadas
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-primary text-base" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+              Suporte em até 24h no WhatsApp
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-primary text-base" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+              7 dias de teste grátis
+            </span>
+          </div>
+        </div>
+
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 max-w-6xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <div
               key={index}
               className={`reveal-on-scroll stagger-${index + 1} relative group rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-500 ${plan.popular
-                  ? "animated-border-card bg-surface-container-low shadow-2xl shadow-primary/10 md:scale-105 md:z-10"
+                  ? "animated-border-card bg-surface-container-low shadow-2xl shadow-primary/20 md:scale-[1.07] md:z-10"
                   : "bg-surface-container border border-hairline-border/60 hover:border-primary/25 hover:shadow-lg hover:shadow-primary/5"
                 }`}
             >
@@ -182,6 +203,9 @@ export default function PricingSection() {
               {/* Plan header */}
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-on-surface mb-1">{plan.name}</h3>
+                {plan.popular && (
+                  <p className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">TUDO LIBERADO</p>
+                )}
                 <p className="text-xs text-on-surface-variant mb-4">{plan.description}</p>
 
                 {/* Price */}
@@ -252,7 +276,13 @@ export default function PricingSection() {
                 {!isAnnual && (
                   <div className="flex justify-between text-xs">
                     <span className="text-on-surface-variant">Implementação</span>
-                    <span className="font-medium text-on-surface">{plan.setup}</span>
+                    {plan.setup === "GRÁTIS" ? (
+                      <span className="font-bold text-primary flex items-center gap-1">
+                        <span>🎁</span> GRÁTIS
+                      </span>
+                    ) : (
+                      <span className="font-medium text-on-surface">{plan.setup}</span>
+                    )}
                   </div>
                 )}
                 {isAnnual && (
@@ -269,7 +299,7 @@ export default function PricingSection() {
                   onClick={() => setSelectedPlanForCheckout(plan)}
                   className={`w-full py-3.5 rounded-xl text-sm font-bold text-center transition-all duration-200 flex items-center justify-center gap-2 active:scale-[0.97] cursor-pointer ${plan.popular
                       ? "bg-primary text-on-primary hover:brightness-110 shadow-lg shadow-primary/25 hover:shadow-primary/40"
-                      : "bg-primary text-on-primary hover:brightness-110 shadow-md shadow-primary/15"
+                      : "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-on-primary"
                     }`}
                   style={{ transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)" }}
                 >
@@ -305,11 +335,19 @@ export default function PricingSection() {
           </div>
         </div>
 
+        {/* 7 Dias de Garantia Incondicional Banner */}
+        <div className="mt-10 max-w-2xl mx-auto bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center reveal-on-scroll">
+          <span className="material-symbols-outlined text-4xl text-primary mb-2 block" style={{ fontVariationSettings: "'FILL' 1" }}>verified_user</span>
+          <h3 className="text-lg font-bold text-on-surface mb-2">7 dias de garantia incondicional</h3>
+          <p className="text-sm text-on-surface-variant">
+            Não gostou? Devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.
+          </p>
+        </div>
+
         {/* Setup note */}
         <div className="text-center mt-6 reveal-on-scroll">
           <p className="text-xs text-on-surface-variant/50">
-            * O valor da implementação pode variar a partir de R$ 79,90 conforme a complexidade do seu negócio.
-            No plano anual, a implementação é gratuita.
+            * Implementação gratuita no plano Premium e em todos os planos anuais. No plano mensal Essencial e Completo, a partir de R$ 79,90.
           </p>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function SucessoPage({
   };
 }) {
   const isPixPending = searchParams?.status === "pendente_pix";
-  const planKey = searchParams?.plan || "Profissional";
+  const planKey = searchParams?.plan || "Completo";
   const planName = planKey.charAt(0).toUpperCase() + planKey.slice(1);
   const isAnnual = searchParams?.interval === "annual";
   const customerName = searchParams?.name || "Cliente PetNexus";

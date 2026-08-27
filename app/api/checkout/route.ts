@@ -11,23 +11,36 @@ const PLANS_CONFIG: Record<
     annualPriceCents: number;
   }
 > = {
-  basico: {
-    name: "PetNexus - Plano Básico",
-    description: "Sistema para pet shops: Painel do Tutor, Agenda Visual e Operação ao Vivo.",
+  essencial: {
+    name: "PetNexus - Plano Essencial",
+    description: "Para começar a organizar: Painel do Tutor, Agenda Visual, Operação ao Vivo e PDV.",
     monthlyPriceCents: 8990, // R$ 89,90
     annualPriceCents: 86304, // R$ 863,04/ano (R$ 71,92/mês com 20% OFF)
   },
-  profissional: {
-    name: "PetNexus - Plano Profissional",
-    description: "Sistema completo: PDV, Caixa, WhatsApp Central, Pacotes e Financeiro.",
+  completo: {
+    name: "PetNexus - Plano Completo",
+    description: "Para quem quer crescer sem complicação: Tudo liberado, Módulo Veterinário, Automações e WhatsApp Central.",
     monthlyPriceCents: 14990, // R$ 149,90
     annualPriceCents: 143904, // R$ 1.439,04/ano (R$ 119,92/mês com 20% OFF)
   },
   premium: {
     name: "PetNexus - Plano Premium",
-    description: "Operações ilimitadas: Módulo Veterinário, Automações e Suporte Prioritário.",
-    monthlyPriceCents: 24990, // R$ 249,90
-    annualPriceCents: 239904, // R$ 2.399,04/ano (R$ 199,92/mês com 20% OFF)
+    description: "Para quem quer o melhor atendimento: Operações ilimitadas, Suporte Prioritário e Implementação Grátis.",
+    monthlyPriceCents: 19990, // R$ 199,90
+    annualPriceCents: 191904, // R$ 1.919,04/ano (R$ 159,92/mês com 20% OFF)
+  },
+  // Aliases para compatibilidade legada
+  basico: {
+    name: "PetNexus - Plano Essencial",
+    description: "Para começar a organizar: Painel do Tutor, Agenda Visual, Operação ao Vivo e PDV.",
+    monthlyPriceCents: 8990,
+    annualPriceCents: 86304,
+  },
+  profissional: {
+    name: "PetNexus - Plano Completo",
+    description: "Para quem quer crescer sem complicação: Tudo liberado, Módulo Veterinário, Automações e WhatsApp Central.",
+    monthlyPriceCents: 14990,
+    annualPriceCents: 143904,
   },
 };
 
