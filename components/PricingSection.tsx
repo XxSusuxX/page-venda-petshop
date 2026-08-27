@@ -210,22 +210,22 @@ export default function PricingSection() {
               <div
                 key={index}
                 className={`reveal-on-scroll stagger-${index + 1} relative group rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-300 ${isPopular
-                    ? "bg-surface-container border-2 border-primary shadow-2xl shadow-primary/20 hover:shadow-primary/30 md:scale-[1.04] md:z-10"
+                    ? "animated-border-card shadow-2xl shadow-primary/20 hover:shadow-primary/30 md:scale-[1.04] md:z-10"
                     : isPremium
-                    ? "bg-surface-container border-2 border-amber-400/80 shadow-2xl shadow-amber-500/15 hover:border-amber-400 hover:shadow-amber-500/25"
+                    ? "animated-border-gold shadow-2xl shadow-amber-500/15 hover:shadow-amber-500/25"
                     : "bg-surface-container border border-hairline-border/60 hover:border-primary/25 hover:shadow-lg"
                   }`}
               >
                 {/* Popular badge */}
                 {isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-xs font-extrabold px-5 py-1.5 rounded-full shadow-lg shadow-primary/30 uppercase tracking-wider whitespace-nowrap">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-xs font-extrabold px-5 py-1.5 rounded-full shadow-lg shadow-primary/30 uppercase tracking-wider whitespace-nowrap z-20">
                     ⭐ Mais Popular
                   </div>
                 )}
 
                 {/* Premium VIP badge */}
                 {isPremium && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-black text-xs font-extrabold px-5 py-1.5 rounded-full shadow-lg shadow-amber-500/30 uppercase tracking-wider whitespace-nowrap flex items-center gap-1.5">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-black text-xs font-extrabold px-5 py-1.5 rounded-full shadow-lg shadow-amber-500/30 uppercase tracking-wider whitespace-nowrap flex items-center gap-1.5 z-20">
                     <span>👑</span> PLANO VIP
                   </div>
                 )}
