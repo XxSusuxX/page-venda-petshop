@@ -68,9 +68,9 @@ const plans = [
     monthlyPrice: "199,90",
     annualPrice: "159,92",
     annualTotal: "1.919,04",
-    description: "Para quem quer atendimento VIP e suporte presencial.",
+    description: "Para quem quer atendimento VIP e consultoria.",
     popular: false,
-    cta: encodeURIComponent("Olá! Tenho interesse no plano Premium com implantação presencial na loja, consultoria mensal e suporte VIP do PetNexus. Podem me ajudar?"),
+    cta: encodeURIComponent("Olá! Tenho interesse no plano Premium com suporte prioritário e consultoria do PetNexus. Podem me ajudar?"),
     limits: {
       clientes: "Ilimitado",
       agendamentos: "Ilimitado",
@@ -91,17 +91,12 @@ const plans = [
       {
         icon: "tune",
         title: "Ajuste de fluxo de trabalho grátis",
-        desc: "Se precisar mudar como o sistema funciona na sua loja, ajustamos sem cobrar nada.",
+        desc: "Se precisar mudar como o sistema funciona, ajustamos sem cobrar nada.",
       },
       {
         icon: "verified",
         title: "Correção de bugs e imprevistos grátis",
         desc: "Se surgir qualquer erro no dia a dia, resolvemos sem nenhum custo extra.",
-      },
-      {
-        icon: "storefront",
-        title: "Implantação presencial na região",
-        desc: "Vamos na sua loja (Douradina, Umuarama, Maria Helena e região) instalar e treinar sua equipe.",
       },
       {
         icon: "monitoring",
@@ -211,17 +206,15 @@ export default function PricingSection() {
             const isPopular = plan.popular;
             const isPremium = plan.key === "premium";
 
-            let cardBorderClass = "bg-surface-container border border-hairline-border/60 hover:border-primary/25 hover:shadow-lg hover:shadow-primary/5";
-            if (isPopular) {
-              cardBorderClass = "animated-border-card bg-surface-container-low shadow-2xl shadow-primary/20 md:scale-[1.07] md:z-10";
-            } else if (isPremium) {
-              cardBorderClass = "animated-border-gold bg-surface-container-low shadow-2xl shadow-amber-500/15 hover:shadow-amber-500/25";
-            }
-
             return (
               <div
                 key={index}
-                className={`reveal-on-scroll stagger-${index + 1} relative group rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-500 ${cardBorderClass}`}
+                className={`reveal-on-scroll stagger-${index + 1} relative group rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-300 ${isPopular
+                    ? "bg-surface-container border-2 border-primary shadow-2xl shadow-primary/20 hover:shadow-primary/30 md:scale-[1.04] md:z-10"
+                    : isPremium
+                    ? "bg-surface-container border-2 border-amber-400/80 shadow-2xl shadow-amber-500/15 hover:border-amber-400 hover:shadow-amber-500/25"
+                    : "bg-surface-container border border-hairline-border/60 hover:border-primary/25 hover:shadow-lg"
+                  }`}
               >
                 {/* Popular badge */}
                 {isPopular && (
@@ -237,50 +230,39 @@ export default function PricingSection() {
                   </div>
                 )}
 
-                {/* Plan header */}
+                {/* Plan header — Strictly aligned across all 3 cards */}
                 <div className="text-center mb-6">
-                  <h3 className={`text-xl font-bold mb-1 ${isPremium ? "text-white font-extrabold" : "text-on-surface"}`}>
+                  <h3 className={`text-2xl font-extrabold mb-1.5 ${isPremium ? "text-amber-300" : isPopular ? "text-primary" : "text-white"}`}>
                     {plan.name}
                   </h3>
-                  {isPopular && (
-                    <p className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">TUDO LIBERADO</p>
-                  )}
-                  {isPremium && (
-                    <div className="my-2.5 px-3.5 py-1.5 bg-amber-400/15 border border-amber-400/40 rounded-xl inline-block">
-                      <p className="text-xs sm:text-sm font-extrabold text-amber-300 uppercase tracking-wider flex items-center justify-center gap-1.5">
-                        <span>🏠</span> ATENDIMENTO PRESENCIAL NA REGIÃO
-                      </p>
-                    </div>
-                  )}
-                  <p className="text-xs sm:text-sm text-on-surface-variant mb-4 font-medium">{plan.description}</p>
+                  <p className="text-xs sm:text-sm text-on-surface-variant min-h-[32px] flex items-center justify-center font-medium">
+                    {plan.description}
+                  </p>
 
                   {/* Price */}
-                  <div className="flex items-baseline justify-center gap-1">
+                  <div className="mt-3 flex items-baseline justify-center gap-1">
                     <span className="text-sm text-on-surface-variant font-medium">R$</span>
-                    <span className={`text-4xl md:text-5xl font-extrabold tabular-nums ${isPremium ? "text-amber-300" : "text-on-surface"}`}>
+                    <span className={`text-4xl md:text-5xl font-extrabold tabular-nums ${isPremium ? "text-amber-300" : isPopular ? "text-primary" : "text-white"}`}>
                       {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                     </span>
                     <span className="text-sm text-on-surface-variant font-medium">/mês</span>
                   </div>
 
-                  {/* Annual savings */}
-                  {isAnnual ? (
-                    <div className="mt-2 space-y-1">
-                      <p className="text-xs text-on-surface-variant/60 line-through">
-                        R$ {plan.monthlyPrice}/mês
-                      </p>
+                  {/* Annual savings / note with exact same height */}
+                  <div className="h-6 mt-1 flex items-center justify-center">
+                    {isAnnual ? (
                       <p className={`text-xs font-bold ${isPremium ? "text-amber-300" : "text-primary"}`}>
                         Economize R$ {(parseFloat(plan.monthlyPrice.replace(",", ".")) * 12 - parseFloat(plan.annualTotal.replace(".", "").replace(",", "."))).toFixed(2).replace(".", ",")} ao ano
                       </p>
-                    </div>
-                  ) : (
-                    <p className="text-xs text-on-surface-variant/70 mt-2">
-                      Ou <span className={`font-bold ${isPremium ? "text-amber-300" : "text-primary"}`}>R$ {plan.annualPrice}/mês</span> no anual
-                    </p>
-                  )}
+                    ) : (
+                      <p className="text-xs text-on-surface-variant/70">
+                        Ou <span className={`font-bold ${isPremium ? "text-amber-300" : "text-primary"}`}>R$ {plan.annualPrice}/mês</span> no anual
+                      </p>
+                    )}
+                  </div>
                 </div>
 
-                {/* Limits */}
+                {/* Limits — Perfectly aligned horizontally across all 3 cards */}
                 <div className="bg-surface-container-high/60 rounded-xl p-4 mb-5 space-y-2 border border-hairline-border/40">
                   <div className="flex justify-between text-xs sm:text-sm">
                     <span className="text-on-surface-variant font-medium">Clientes</span>
@@ -349,7 +331,7 @@ export default function PricingSection() {
                       <span className="text-on-surface-variant font-medium">Implementação</span>
                       {isPremium ? (
                         <span className="font-bold text-amber-300 flex items-center gap-1">
-                          <span>👑</span> GRÁTIS (Presencial)
+                          <span>👑</span> GRÁTIS
                         </span>
                       ) : plan.setup === "GRÁTIS" ? (
                         <span className="font-bold text-primary flex items-center gap-1">
@@ -364,7 +346,7 @@ export default function PricingSection() {
                     <div className="flex justify-between text-xs sm:text-sm">
                       <span className="text-on-surface-variant font-medium">Implementação</span>
                       <span className={`font-bold flex items-center gap-1 ${isPremium ? "text-amber-300" : "text-primary"}`}>
-                        {isPremium ? "👑 GRÁTIS (Presencial)" : "🎁 Grátis"}
+                        {isPremium ? "👑 GRÁTIS" : "🎁 Grátis"}
                       </span>
                     </div>
                   )}
