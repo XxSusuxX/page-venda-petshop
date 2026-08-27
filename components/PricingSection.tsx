@@ -215,7 +215,7 @@ export default function PricingSection() {
             if (isPopular) {
               cardBorderClass = "animated-border-card bg-surface-container-low shadow-2xl shadow-primary/20 md:scale-[1.07] md:z-10";
             } else if (isPremium) {
-              cardBorderClass = "animated-border-gold bg-surface-container-low bg-gradient-to-b from-amber-500/[0.08] via-surface-container-low to-surface-container-low shadow-2xl shadow-amber-500/15 hover:shadow-amber-500/25";
+              cardBorderClass = "animated-border-gold bg-surface-container-low shadow-2xl shadow-amber-500/15 hover:shadow-amber-500/25";
             }
 
             return (
@@ -239,28 +239,28 @@ export default function PricingSection() {
 
                 {/* Plan header */}
                 <div className="text-center mb-6">
-                  <h3 className={`text-xl font-bold mb-1 ${isPremium ? "text-amber-200 font-extrabold" : "text-on-surface"}`}>
+                  <h3 className={`text-xl font-bold mb-1 ${isPremium ? "text-white font-extrabold" : "text-on-surface"}`}>
                     {plan.name}
                   </h3>
                   {isPopular && (
                     <p className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">TUDO LIBERADO</p>
                   )}
                   {isPremium && (
-                    <div className="my-2.5 px-3 py-1 bg-amber-400/15 border border-amber-400/30 rounded-lg inline-block">
-                      <p className="text-xs font-extrabold text-amber-300 uppercase tracking-wider flex items-center justify-center gap-1.5">
+                    <div className="my-2.5 px-3.5 py-1.5 bg-amber-400/15 border border-amber-400/40 rounded-xl inline-block">
+                      <p className="text-xs sm:text-sm font-extrabold text-amber-300 uppercase tracking-wider flex items-center justify-center gap-1.5">
                         <span>🏠</span> ATENDIMENTO PRESENCIAL NA REGIÃO
                       </p>
                     </div>
                   )}
-                  <p className="text-xs text-on-surface-variant mb-4">{plan.description}</p>
+                  <p className="text-xs sm:text-sm text-on-surface-variant mb-4 font-medium">{plan.description}</p>
 
                   {/* Price */}
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-sm text-on-surface-variant">R$</span>
+                    <span className="text-sm text-on-surface-variant font-medium">R$</span>
                     <span className={`text-4xl md:text-5xl font-extrabold tabular-nums ${isPremium ? "text-amber-300" : "text-on-surface"}`}>
                       {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                     </span>
-                    <span className="text-sm text-on-surface-variant">/mês</span>
+                    <span className="text-sm text-on-surface-variant font-medium">/mês</span>
                   </div>
 
                   {/* Annual savings */}
@@ -274,25 +274,25 @@ export default function PricingSection() {
                       </p>
                     </div>
                   ) : (
-                    <p className="text-xs text-on-surface-variant/50 mt-2">
+                    <p className="text-xs text-on-surface-variant/70 mt-2">
                       Ou <span className={`font-bold ${isPremium ? "text-amber-300" : "text-primary"}`}>R$ {plan.annualPrice}/mês</span> no anual
                     </p>
                   )}
                 </div>
 
                 {/* Limits */}
-                <div className="bg-surface-container-high/50 rounded-xl p-4 mb-5 space-y-2">
-                  <div className="flex justify-between text-xs">
-                    <span className="text-on-surface-variant">Clientes</span>
-                    <span className="font-bold text-on-surface">{plan.limits.clientes}</span>
+                <div className="bg-surface-container-high/60 rounded-xl p-4 mb-5 space-y-2 border border-hairline-border/40">
+                  <div className="flex justify-between text-xs sm:text-sm">
+                    <span className="text-on-surface-variant font-medium">Clientes</span>
+                    <span className="font-bold text-white">{plan.limits.clientes}</span>
                   </div>
-                  <div className="flex justify-between text-xs">
-                    <span className="text-on-surface-variant">Agendamentos</span>
-                    <span className="font-bold text-on-surface">{plan.limits.agendamentos}</span>
+                  <div className="flex justify-between text-xs sm:text-sm">
+                    <span className="text-on-surface-variant font-medium">Agendamentos</span>
+                    <span className="font-bold text-white">{plan.limits.agendamentos}</span>
                   </div>
-                  <div className="flex justify-between text-xs">
-                    <span className="text-on-surface-variant">Profissionais</span>
-                    <span className="font-bold text-on-surface">{plan.limits.profissionais}</span>
+                  <div className="flex justify-between text-xs sm:text-sm">
+                    <span className="text-on-surface-variant font-medium">Profissionais</span>
+                    <span className="font-bold text-white">{plan.limits.profissionais}</span>
                   </div>
                 </div>
 
@@ -307,9 +307,9 @@ export default function PricingSection() {
                       ) : (
                         <span className="material-symbols-outlined text-on-surface-variant/30 text-lg flex-shrink-0">cancel</span>
                       )}
-                      <span className={`text-xs ${feature.included ? "text-on-surface" : "text-on-surface-variant/40"}`}>
+                      <span className={`text-xs sm:text-sm ${feature.included ? "text-on-surface font-medium" : "text-on-surface-variant/40"}`}>
                         {feature.name}
-                        {feature.note && <span className={`${isPremium ? "text-amber-300/80" : "text-primary/70"} ml-1`}>({feature.note})</span>}
+                        {feature.note && <span className={`${isPremium ? "text-amber-300 font-semibold" : "text-primary font-semibold"} ml-1`}>({feature.note})</span>}
                       </span>
                     </div>
                   ))}
@@ -317,20 +317,20 @@ export default function PricingSection() {
 
                 {/* Exclusive VIP Perks for Premium */}
                 {plan.exclusivePerks && (
-                  <div className="bg-amber-500/[0.08] border border-amber-400/30 rounded-2xl p-4 mb-5 space-y-3 text-left">
-                    <div className="flex items-center gap-2 text-amber-300 font-extrabold text-xs uppercase tracking-wider">
+                  <div className="bg-surface-container-lowest/90 border-2 border-amber-400/40 rounded-2xl p-4 mb-5 space-y-3.5 text-left shadow-lg">
+                    <div className="flex items-center gap-2 text-amber-300 font-extrabold text-xs sm:text-sm uppercase tracking-wider">
                       <span className="text-base">👑</span>
                       DIFERENCIAIS EXCLUSIVOS VIP
                     </div>
-                    <div className="space-y-2.5">
+                    <div className="space-y-3">
                       {plan.exclusivePerks.map((perk, pi) => (
                         <div key={pi} className="flex items-start gap-2.5">
-                          <span className="material-symbols-outlined text-amber-400 text-base flex-shrink-0 mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>
+                          <span className="material-symbols-outlined text-amber-400 text-lg flex-shrink-0 mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>
                             {perk.icon}
                           </span>
                           <div>
-                            <p className="text-xs font-bold text-on-surface leading-snug">{perk.title}</p>
-                            <p className="text-[11px] text-on-surface-variant/90 leading-tight mt-0.5">{perk.desc}</p>
+                            <p className="text-xs sm:text-sm font-bold text-white leading-snug">{perk.title}</p>
+                            <p className="text-xs text-zinc-300 leading-relaxed mt-0.5">{perk.desc}</p>
                           </div>
                         </div>
                       ))}
@@ -340,13 +340,13 @@ export default function PricingSection() {
 
                 {/* Support & Setup */}
                 <div className="border-t border-hairline-border/30 pt-4 mb-5 space-y-2">
-                  <div className="flex justify-between text-xs">
-                    <span className="text-on-surface-variant">Suporte</span>
-                    <span className={`font-medium ${isPremium ? "text-amber-200 font-bold" : "text-on-surface"}`}>{plan.support}</span>
+                  <div className="flex justify-between text-xs sm:text-sm">
+                    <span className="text-on-surface-variant font-medium">Suporte</span>
+                    <span className={`font-semibold ${isPremium ? "text-amber-300" : "text-white"}`}>{plan.support}</span>
                   </div>
                   {!isAnnual && (
-                    <div className="flex justify-between text-xs">
-                      <span className="text-on-surface-variant">Implementação</span>
+                    <div className="flex justify-between text-xs sm:text-sm">
+                      <span className="text-on-surface-variant font-medium">Implementação</span>
                       {isPremium ? (
                         <span className="font-bold text-amber-300 flex items-center gap-1">
                           <span>👑</span> GRÁTIS (Presencial)
@@ -356,13 +356,13 @@ export default function PricingSection() {
                           <span>🎁</span> GRÁTIS
                         </span>
                       ) : (
-                        <span className="font-medium text-on-surface">{plan.setup}</span>
+                        <span className="font-medium text-white">{plan.setup}</span>
                       )}
                     </div>
                   )}
                   {isAnnual && (
-                    <div className="flex justify-between text-xs">
-                      <span className="text-on-surface-variant">Implementação</span>
+                    <div className="flex justify-between text-xs sm:text-sm">
+                      <span className="text-on-surface-variant font-medium">Implementação</span>
                       <span className={`font-bold flex items-center gap-1 ${isPremium ? "text-amber-300" : "text-primary"}`}>
                         {isPremium ? "👑 GRÁTIS (Presencial)" : "🎁 Grátis"}
                       </span>

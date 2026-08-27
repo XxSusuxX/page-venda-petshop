@@ -211,6 +211,7 @@ body {
    ───────────────────────────────────────── */
 .animated-border-gold {
   position: relative;
+  background-color: #161d19;
   background-clip: padding-box;
 }
 
