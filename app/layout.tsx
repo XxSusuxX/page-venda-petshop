@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "PetNexus — Sistema de Gestão para Pet Shops | Agenda, Operação e Painel do Tutor",
+  title: "PetNexus — Página de Vendas Sistema de Gestão para Pet Shops | Agenda, Operação e Painel do Tutor",
   description:
     "O sistema mais completo para pet shops, banho & tosa e clínicas veterinárias. Agenda visual, operação ao vivo, PDV, WhatsApp automático e um painel exclusivo para o tutor do pet. Pronto em 48h.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "PetNexus",
   ],
   openGraph: {
-    title: "PetNexus — Sistema de Gestão para Pet Shops",
+    title: "PetNexus — Página de Vendas Sistema de Gestão para Pet Shops",
     description:
       "Pare de perder clientes por desorganização. Sistema completo com agenda, operação ao vivo e painel do tutor.",
     type: "website",
